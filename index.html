@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Brew Secret Menu: Hidden Drinks You Need to Try</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brew-red: #C8102E;
+    --brew-dark: #1A0A0A;
+    --brew-gold: #F5A623;
+    --brew-cream: #FFF8F0;
+    --brew-brown: #3D1C02;
+    --brew-light-red: #FF3D57;
+    --brew-tan: #E8D5B7;
+    --text-body: #2D1A0E;
+    --shadow: 0 8px 40px rgba(200,16,46,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--brew-cream);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--brew-dark);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 3px solid var(--brew-red);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--brew-red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .logo-text span {
+    color: var(--brew-gold);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  nav a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--brew-gold); }
+
+  .nav-cta {
+    background: var(--brew-red) !important;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--brew-light-red) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--brew-dark);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px 100px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,16,46,0.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 60px;
+    background: var(--brew-cream);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(200,16,46,0.2);
+    border: 1px solid rgba(200,16,46,0.5);
+    color: var(--brew-gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: fadeDown 0.7s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--brew-red);
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: rgba(255,255,255,0.65);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    animation: fadeDown 0.7s 0.2s ease both;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MAIN CONTAINER ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 64px 0;
+  }
+
+  section + section {
+    border-top: 1px solid rgba(200,16,46,0.12);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brew-red);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 900;
+    color: var(--brew-brown);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #4A2C14;
+    margin-bottom: 16px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  a.inline-link {
+    color: var(--brew-red);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  a.inline-link:hover { color: var(--brew-brown); }
+
+  /* ── INTRO CARD ── */
+  .intro-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 44px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--brew-red);
+    margin-top: 12px;
+  }
+
+  /* ── POPULAR DRINKS ── */
+  .drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .drink-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px 28px;
+    box-shadow: 0 4px 24px rgba(61,28,2,0.08);
+    border-top: 4px solid var(--brew-red);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .drink-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, rgba(200,16,46,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .drink-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(200,16,46,0.18);
+  }
+
+  .drink-emoji {
+    font-size: 36px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .drink-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brew-brown);
+    margin-bottom: 8px;
+  }
+
+  .drink-desc {
+    font-size: 14.5px;
+    color: #6B3F1A;
+    line-height: 1.6;
+  }
+
+  /* ── HOW TO ORDER ── */
+  .order-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: 0 2px 16px rgba(61,28,2,0.07);
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--brew-red);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .step-text { font-size: 16px; color: #4A2C14; line-height: 1.7; }
+
+  /* ── FLAVOR TAGS ── */
+  .flavor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .flavor-tag {
+    background: #fff;
+    border: 2px solid var(--brew-tan);
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--brew-brown);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .flavor-tag:hover {
+    border-color: var(--brew-red);
+    background: rgba(200,16,46,0.04);
+    color: var(--brew-red);
+  }
+
+  .flavor-dot {
+    width: 8px; height: 8px;
+    background: var(--brew-red);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-top: 32px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 500px;
+  }
+
+  thead {
+    background: var(--brew-dark);
+  }
+
+  thead th {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 22px;
+    text-align: left;
+  }
+
+  thead th:first-child { border-radius: 16px 0 0 0; }
+  thead th:last-child  { border-radius: 0 16px 0 0; }
+
+  tbody tr {
+    border-bottom: 1px solid rgba(200,16,46,0.08);
+    transition: background 0.15s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody tr:hover { background: rgba(200,16,46,0.04); }
+
+  tbody td {
+    padding: 15px 22px;
+    font-size: 15px;
+    color: #4A2C14;
+  }
+
+  tbody td:first-child {
+    font-weight: 600;
+    color: var(--brew-brown);
+  }
+
+  /* ── TIPS BLOCK ── */
+  .tips-block {
+    background: linear-gradient(135deg, var(--brew-dark) 0%, #3D1C02 100%);
+    border-radius: 20px;
+    padding: 48px 44px;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tips-block::before {
+    content: '☕';
+    position: absolute;
+    right: 32px;
+    top: 28px;
+    font-size: 80px;
+    opacity: 0.07;
+  }
+
+  .tips-block h2 { color: #fff; }
+  .tips-block p  { color: rgba(255,255,255,0.75); }
+  .tips-block .section-label { color: var(--brew-gold); }
+
+  .tips-list {
+    list-style: none;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .tips-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .tips-list li::before {
+    content: '✦';
+    color: var(--brew-gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── WHY PEOPLE LOVE ── */
+  .love-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  .love-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 26px 22px;
+    text-align: center;
+    box-shadow: 0 2px 14px rgba(61,28,2,0.07);
+    border-bottom: 3px solid var(--brew-gold);
+    transition: transform 0.2s;
+  }
+
+  .love-card:hover { transform: translateY(-4px); }
+
+  .love-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .love-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--brew-brown);
+    margin-bottom: 8px;
+  }
+
+  .love-text {
+    font-size: 14px;
+    color: #6B3F1A;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── CONCLUSION BANNER ── */
+  .conclusion-banner {
+    background: var(--brew-red);
+    border-radius: 20px;
+    padding: 48px 44px;
+    margin-top: 0;
+    text-align: center;
+    color: #fff;
+  }
+
+  .conclusion-banner h2 {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .conclusion-banner p {
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    margin: 0 auto 24px;
+    font-size: 17px;
+  }
+
+  .conclusion-banner a.inline-link {
+    color: var(--brew-gold);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brew-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 36px 24px;
+    font-size: 14px;
+    border-top: 3px solid var(--brew-red);
+    margin-top: 80px;
+  }
+
+  footer a {
+    color: var(--brew-gold);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  footer a:hover { text-decoration: underline; }
+
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  footer .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  footer .footer-brand span { color: var(--brew-red); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    nav { display: none; }
+    .intro-card, .tips-block, .conclusion-banner { padding: 28px 22px; }
+    .hero { padding: 60px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <a href="https://7brewssecretmenu.com/" class="logo">
+      <div class="logo-icon">7</div>
+      <div class="logo-text">Brew <span>Secret</span></div>
+    </a>
+    <nav>
+      <a href="#what-is">What Is It</a>
+      <a href="#popular">Popular Drinks</a>
+      <a href="#how-to">How to Order</a>
+      <a href="#tips">Tips</a>
+      <a href="https://7brewssecretmenu.com/" class="nav-cta">View Full Menu</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-badge">🔒 Exclusive Insider Guide</div>
+  <h1>7 Brew <em>Secret Menu</em>:<br>Hidden Drinks You Need to Try</h1>
+  <p class="hero-sub">The buzz around the secret menu has been growing fast — and for good reason. Discover the hidden combinations that loyal customers and baristas have created over time.</p>
+</section>
+
+<!-- ══ INTRO ══ -->
+<div class="container">
+
+  <section id="what-is">
+    <div class="section-label">The Beginning</div>
+    <h2>What Is the 7 Brew Secret Menu?</h2>
+    <div class="intro-card">
+      <p>
+        While the regular menu already offers a wide variety of coffees, energy drinks, teas, and smoothies, the real excitement lies in the hidden combinations that loyal customers and baristas have created over time. These secret menu drinks are not officially listed, but they are widely known among fans who love experimenting with flavors. If you enjoy customizing your drinks and trying something different, <a href="https://7brewssecretmenu.com/" class="inline-link">7brewssecretmenu</a> opens the door to a completely new experience. It is all about creativity, bold flavors, and finding your perfect mix.
+      </p>
+      <p>
+        The 7 Brew secret menu is a collection of unofficial drink combinations created by customers and baristas. These drinks are made using ingredients already available at 7 Brew but mixed in unique and creative ways. Unlike a standard menu, there is no fixed list — the secret menu is constantly evolving as people discover new flavor combinations. Some drinks become popular and spread through social media, while others remain local favorites. This flexibility is what makes the secret menu exciting. You are not limited to pre-set options — you can customize your drink exactly how you like it.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ WHY POPULAR ══ -->
+  <section id="why">
+    <div class="section-label">The Appeal</div>
+    <h2>Why the Secret Menu Is So Popular</h2>
+    <p>One of the main reasons for the popularity of the 7 Brew secret menu is personalization. Customers love having control over their drinks and creating something unique. Another reason is the variety of flavors — from fruity mixes to dessert-inspired drinks, the secret menu offers combinations that go beyond traditional coffee options.</p>
+    <p>The social aspect also plays a role. People enjoy sharing their favorite secret menu drinks online, which helps new ideas spread quickly. It turns a simple coffee run into an experience where you can try something new every time.</p>
+
+    <div class="love-grid">
+      <div class="love-card">
+        <div class="love-icon">🎨</div>
+        <div class="love-title">Personalization</div>
+        <p class="love-text">Full control to customize every drink exactly to your taste.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">🍹</div>
+        <div class="love-title">Variety</div>
+        <p class="love-text">From fruity mixes to dessert-inspired drinks beyond the ordinary.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">🌐</div>
+        <div class="love-title">Social Buzz</div>
+        <p class="love-text">People love sharing secret drinks online, spreading new ideas fast.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">✨</div>
+        <div class="love-title">Exclusivity</div>
+        <p class="love-text">Feel like part of something special with every hidden order.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ POPULAR DRINKS ══ -->
+  <section id="popular">
+    <div class="section-label">Fan Favorites</div>
+    <h2>Popular 7 Brew Secret Menu Drinks</h2>
+    <p>These are the most celebrated hidden combinations among loyal 7 Brew fans. Each one has been crafted through creative experimentation and stands out for its unique flavor profile.</p>
+
+    <div class="drinks-grid">
+      <div class="drink-card">
+        <span class="drink-emoji">🌙</span>
+        <div class="drink-name">Midnight Dream</div>
+        <p class="drink-desc">A rich and smooth drink made with chocolate and vanilla flavors blended into a creamy base. Perfect for those who enjoy dessert-style beverages.</p>
+      </div>
+      <div class="drink-card">
+        <span class="drink-emoji">🌴</span>
+        <div class="drink-name">Tropical Thunder</div>
+        <p class="drink-desc">A refreshing and fruity energy drink that combines tropical flavors like mango, pineapple, and coconut. Ideal for hot days when you need something energizing.</p>
+      </div>
+      <div class="drink-card">
+        <span class="drink-emoji">🍪</span>
+        <div class="drink-name">Caramel Cookie</div>
+        <p class="drink-desc">A sweet and indulgent option featuring caramel, vanilla, and a hint of chocolate. Tastes like a freshly baked cookie in drink form.</p>
+      </div>
+      <div class="drink-card">
+        <span class="drink-emoji">🫐</span>
+        <div class="drink-name">Berry Blast</div>
+        <p class="drink-desc">A vibrant mix of strawberry, raspberry, and blueberry flavors. Both refreshing and slightly tangy — a popular choice for fruit lovers.</p>
+      </div>
+      <div class="drink-card">
+        <span class="drink-emoji">☕</span>
+        <div class="drink-name">White Chocolate Iced Latte Remix</div>
+        <p class="drink-desc">A smooth iced latte with white chocolate and added flavor shots like hazelnut or caramel for extra depth and richness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW TO ORDER ══ -->
+  <section id="how-to">
+    <div class="section-label">Ordering Guide</div>
+    <h2>How to Order from the Secret Menu</h2>
+    <p>Ordering from the secret menu is simple, but you need to know how to ask for it. Since these drinks are not officially listed, describe the ingredients or flavor combination instead of just naming the drink.</p>
+
+    <div class="order-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Describe the ingredients</strong> — Baristas are usually happy to help if you explain what you want clearly. Don't just name the drink; tell them the flavor combination you're after.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Customize your preferences</strong> — You can customize sweetness levels, milk options, and ice preferences to make the drink exactly how you like it.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Be open to suggestions</strong> — Your barista may know even better combinations. Don't be afraid to ask for their personal recommendation from the secret menu.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FLAVOR COMBINATIONS ══ -->
+  <section id="flavors">
+    <div class="section-label">Mix & Match</div>
+    <h2>Secret Menu Flavor Combinations</h2>
+    <p>Here are some creative combinations you can try. These combinations can be used in coffee, energy drinks, teas, or smoothies — the possibilities are endless.</p>
+
+    <div class="flavor-grid">
+      <span class="flavor-tag"><span class="flavor-dot"></span> Vanilla + Caramel + Hazelnut</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> Strawberry + Coconut + Lime</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> Chocolate + Mint</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> Peach + Mango + Passionfruit</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> White Chocolate + Raspberry</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> Hazelnut + Dark Roast</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> Coconut + Vanilla + Espresso</span>
+      <span class="flavor-tag"><span class="flavor-dot"></span> Blueberry + Lavender</span>
+    </div>
+  </section>
+
+  <!-- ══ TABLE ══ -->
+  <section id="table">
+    <div class="section-label">Quick Reference</div>
+    <h2>Secret Menu Drinks at a Glance</h2>
+    <p>Use this quick-reference guide to find the right drink for your mood and craving.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Drink Name</th>
+            <th>Flavor Profile</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Midnight Dream</td>
+            <td>Chocolate + Vanilla</td>
+            <td>Dessert lovers</td>
+          </tr>
+          <tr>
+            <td>Tropical Thunder</td>
+            <td>Mango + Coconut</td>
+            <td>Refreshing energy</td>
+          </tr>
+          <tr>
+            <td>Caramel Cookie</td>
+            <td>Caramel + Chocolate</td>
+            <td>Sweet cravings</td>
+          </tr>
+          <tr>
+            <td>Berry Blast</td>
+            <td>Mixed Berries</td>
+            <td>Fruity taste</td>
+          </tr>
+          <tr>
+            <td>White Chocolate Remix</td>
+            <td>Creamy + Sweet</td>
+            <td>Coffee lovers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══ TIPS ══ -->
+  <section id="tips">
+    <div class="tips-block">
+      <div class="section-label">Pro Advice</div>
+      <h2>Tips to Create Your Own Secret Drink</h2>
+      <p>The best part of the 7 Brew secret menu is that you can create your own drink. Follow these tips to craft the perfect custom beverage every time.</p>
+      <ul class="tips-list">
+        <li>Start by choosing a base — coffee, energy drink, or tea — before adding flavors.</li>
+        <li>Add one or two main flavors and finish with a complementary flavor to balance the taste.</li>
+        <li>Avoid mixing too many flavors at once, as it can overpower the drink. Simple combinations often taste better.</li>
+        <li>Experiment with different milk options like almond or oat milk to change the texture and taste.</li>
+        <li>Ask your barista for a recommendation — they often know the best hidden combinations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ WHY PEOPLE LOVE HIDDEN MENUS ══ -->
+  <section id="love">
+    <div class="section-label">The Experience</div>
+    <h2>Why People Love Hidden Menu Drinks</h2>
+    <p>Secret menu drinks create a sense of exclusivity. Customers feel like they are part of something special when they order a drink that is not on the regular menu. It also keeps the experience fresh — instead of ordering the same drink every time, you can explore new flavors and combinations.</p>
+    <p>This sense of discovery and creativity is what makes secret menus so popular across different brands. For the full collection of hidden drinks and combinations, visit <a href="https://7brewssecretmenu.com/" class="inline-link">7brewssecretmenu</a> — the ultimate fan-curated resource for everything 7 Brew.</p>
+  </section>
+
+  <!-- ══ CONCLUSION ══ -->
+  <section style="padding-bottom: 0;">
+    <div class="conclusion-banner">
+      <h2>Ready to Explore the Secret Menu?</h2>
+      <p>The 7 Brew secret menu is more than just a list of hidden drinks — it is a creative experience that allows you to explore flavors, customize your beverages, and enjoy something unique every time you visit. From sweet dessert-style drinks to refreshing fruity mixes, there is something for everyone. Whether you follow popular combinations or create your own, the secret menu gives you the freedom to make every drink your own.</p>
+      <p>If you enjoy trying new things and want to upgrade your coffee experience, the 7 Brew secret menu is definitely worth exploring.</p>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-brand">7 Brew <span>Secret</span> Menu</div>
+  <div class="footer-links">
+    <a href="https://7brewssecretmenu.com/">7brewssecretmenu</a>
+    <a href="#popular">Popular Drinks</a>
+    <a href="#how-to">How to Order</a>
+    <a href="#flavors">Flavor Combos</a>
+    <a href="#tips">Tips</a>
+  </div>
+  <p>© 2025 7 Brew Secret Menu Fan Guide. All content is for informational purposes only.</p>
+</footer>
+
+</body>
+</html>
